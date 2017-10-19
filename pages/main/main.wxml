@@ -1,0 +1,19 @@
+<view class="container">
+  <scroll-view scroll-y style="height: 1220rpx;">
+    <view class="message" bindtap="toMesDetail">
+      <image src="/images/mes.png" mode="widthFix" style="height:100rpx;width:100rpx;;border-radius:60rpx;"/>
+      <view style="height:50rpx;right:20rpx;position:absolute;font-size:28rpx;top:40rpx;">29m</view>
+    </view>
+
+    <view class="message">
+      <image src="/images/mes1.png" mode="widthFix" style="height:100rpx;width:100rpx;"/>
+      <view style="height:50rpx;right:20rpx;position:absolute;font-size:28rpx;top:40rpx">60m</view>
+    </view>
+  </scroll-view> 
+</view>
+
+<view class="tabBar" style='font-weight:blod'>
+  <view class="menu">朋友</view>
+  <view class="menu" style='color:red'>主页</view>
+  <view class="menu" bindtap="toPlay" >去玩</view>
+</view>

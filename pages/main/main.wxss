@@ -1,0 +1,44 @@
+Page {
+  background-color : #f7f5f5;
+  padding-left : 3%;
+  padding-right:3%;
+}
+
+.tabBar { 
+  padding-left : 10rpx;
+  padding-top : 10rpx;
+  padding-bottom:10rpx;
+  padding-right : 10rpx;
+  background-color : #ffffff;
+  margin-bottom : 10rpx;
+  border-radius: 6rpx;
+  position : absolute;
+  bottom : 0;
+  width : 94%;
+  height:80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: -webkit-flex;
+}
+
+.tabBar .menu {
+  flex-grow: 1;
+  color : #4d4b4b;
+  font-size : 30rpx;
+  text-align: center
+}
+.message{
+  position:relative;
+  display:flex;
+  align-items : center;
+  box-shadow: 0 0 10rpx #ccc;
+  height : 120rpx;
+  width : 94%;
+  justify-content: center;
+  border-radius: 16rpx;
+  background-color :#ffffff;
+  margin-top : 30rpx;
+}

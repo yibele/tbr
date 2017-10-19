@@ -1,0 +1,54 @@
+Page {
+  background-color : rgb(102,206,255);
+  color:#ffffff;
+}
+.question {
+  font-size:36rpx;
+  margin-top : 100rpx;
+  width: 65%;
+  text-align:center
+}
+
+.answer{
+  text-align:center;
+  margin-top:100rpx;
+}
+
+.buttonSu {
+  position:fixed;
+  bottom:100rpx;
+  left:42%;
+  font-size:24rpx;
+}
+
+.allQue {
+  font-size: 20rpx;
+  text-align:center;
+  color : blue;
+  background-color : #fff;
+  border-radius : 100rpx;
+  width:100rpx;
+  height : 100rpx;
+  position:absolute;
+  bottom : 200rpx;
+  right : 200rpx;
+}
+.choseUser button {
+  font-size:34rpx;
+
+  width:260rpx;
+  height : 100rpx;
+  background-color : #fff;
+  color :  rgb(70,179,245);
+  box-shadow: 0 0 10rpx #ccc;
+}
+.choseUser button.active {
+  background-color:#fff;
+}
+
+.choseUser {
+  display: flex;
+  flex-wrap: wrap;
+  width:600rpx;
+  height : 300rpx;
+}

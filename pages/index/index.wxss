@@ -1,0 +1,6 @@
+.index_big_logo {
+  margin-top : 200rpx;
+  margin-bottom : 200rpx;
+  font-size : 60rpx;
+  color : #3c3c3c;
+}

@@ -1,0 +1,5 @@
+<!--pages/init/init.wxml-->
+<view class="container" wx:if="{{isLoading == true}}">
+  <image src='http://psdwizard.com/wp-content/uploads/2016/07/octo-loader.gif' style="margin-top:200rpx;"></image>
+  Loading...
+</view>

@@ -1,0 +1,15 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.hr {
+  background-color : #edfdfd;
+  height:1px;
+  width:100%;
+  margin-bottom:100rpx;
+}

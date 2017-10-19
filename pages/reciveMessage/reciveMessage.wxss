@@ -1,0 +1,7 @@
+Page {
+  background-color:rgb(198,0,160);
+  color:#ffffff;
+}
+.headTum {
+  margin-top : 100rpx;
+}

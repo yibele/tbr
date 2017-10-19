@@ -1,0 +1,76 @@
+<!-- 第一步输入年龄阶段 -->
+<view class="container" id="interAge" wx:if="{{ step ==0 }}">
+  <view class="index_big_logo">诚一下实</view>
+  <view bindtap='' class="index_select">
+    <view style="height:140rpx">
+      <button type='primary' bindtap='toGrade' wx:if="{{ age > 17 && age < 60}}" style="width:500rpx;border-radius:50rpx;background-color:blue">开始!</button>
+
+    </view>
+    <view style="font-size:28rpx;text-align:center;color : #c5c5c5;margin-bottom : 10rpx;" wx:if="{{age == 0}}">输入您的年龄，我们就可以开始</view>
+    <view style="text-align:center;font-size:48rpx;color :;" wx:if="{{ age == 0 }}">输入年龄</view>
+    <view style="text-align:center;font-size:48rpx;color :#cecece;" wx:if="{{ age !=0 && age <18 }}">你需要再大一点</view>
+    <view style="text-align:center;font-size:48rpx;color : ;" wx:if="{{ age != 0  }}">{{age}}</view>
+
+
+    <view style="width : 720rpx;height : 400rpx; overflow :hidden ;position : relative;background-color:#eee;margin-top:10px">
+      <picker-view indicator-style="height : 30px" style="width : 100%; height : 300px;padding:0;text-align:center;position:absolute;top : -200rpx;" bindchange="selectAge">
+        <picker-view-column>
+          <view wx:for="{{ages}}" style='width : width : 200px'>{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>
+
+<!-- 获取位置信息 和 获取通讯录权限 -->
+
+
+
+<view class="container" id="interGrade" wx:if="{{ step==1 }}">
+  <view class="" style="font-size:40rpx;margin-top : 100rpx;margin-bottom:20rpx;">请填写的专业</view>
+    <input placeholder="请填写专业全称" style="font-size:30rpx;text-align:center" bindinput ="getZhuanye"></input>
+  <view  style="font-size:40rpx;margin-top : 100rpx;margin-bottom:20rpx;text-align:center" >请选择你的年级</view>
+    <input placeholder="例:2016级 填写2016"  style="font-size:30rpx;text-align:center" bindinput="getGrade"></input>
+
+    <view style="font-size : 28rpx;margin-top : 100rpx; color:green;vertical-align:text-top;"> <icon type="info" size="18" color="red"/> 请正确填写相关信息，这样我们才能确定您</view>
+    <button bindtap="toName" style="margin-top:300rpx;position:fixed;bottom:20rpx;width:500rpx">下一步</button>
+</view>
+
+<view class='container' wx:if="{{ step ==2 }}" style=''>
+  <view style="margin-top : 200rpx; font-size :40rpx;margin-bottom : 60rpx;">请输入你的姓名</view>
+  <input placeholder='请输入姓名'  style="text-align:center" bindinput="getName"></input>
+  <view style="margin-top : 100rpx; font-size :40rpx;margin-bottom : 60rpx;">请输入你的姓名拼音</view>
+  <input placeholder='请输入姓名的拼音'  style="text-align:center" bindinput="getName_pinyin"></input>
+   <view style="font-size : 28rpx;margin-top : 100rpx; color:green;vertical-align:text-top;width:500rpx"> <icon type="info" size="15" color="blue"/> 为了让不知道怎么书写您姓名的朋友找到你，请您填写名字的拼音</view>
+   <view style="font-size : 28rpx;margin-top : 40rpx; color:green;vertical-align:text-top;width:500rpx"> <icon type="info" size="15" color="red"/> 您只有一次填写机会，请正确填写</view>
+  <button bindtap="toSex" style="margin-top:300rpx;position:fixed;bottom:20rpx;width:500rpx">下一步</button>
+</view>
+
+<view class='container' wx:if="{{ step == 3 }}">
+  <view style="margin-top : 200rpx; font-size :40rpx;margin-bottom : 60rpx;">选择你的性别</view>
+  <view style="font-size:50rpx;margin-bottom:20rpx" bindtap="sexBeMan">男</view>
+  <view style="font-size:50rpx;" bindtap="sexBeMale">女</view>
+</view>
+
+<view class="container" wx:if="{{ step ==4 }}">
+  <view style="margin-top : 200rpx; font-size :40rpx;margin-bottom : 60rpx;">取一个昵称</view>
+  <input placeholder='UserName' bindinput='' style="text-align:center" bindinput="getUserName"></input>
+  <button bindtap="" style="margin-top:300rpx;position:fixed;bottom:20rpx;width:500rpx" bindtap="toDesc">下一步</button>
+</view>
+
+<view class="container" wx:if="{{ step == 5}}">
+  <view style="margin-top : 100rpx;font-size : 50rpx;color : blue;margin-bottom : 20rpx">欢迎来到</view>
+  <view style="margin-bottom:100rpx">诚实一下</view>
+  <view>
+    <view>
+      <block>
+      回答关于你朋友的调查问卷
+      </block>
+      <block>
+      所有回答者都是匿名的
+      </block>
+    </view>
+  </view>
+
+   <button bindtap="" style="margin-top:300rpx;position:fixed;bottom:20rpx;width:500rpx" bindtap="toMain">开始吧！</button>
+</view>
