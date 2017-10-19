@@ -1,16 +1,19 @@
 
 <view class="container">
   <view class="headTum">
-    <image src="/images/girl.jpeg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;"/>
+    <image src="/images/girl.jpeg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex == 0}}"/>
 
-    <image src="/images/boy.jpg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;"/>
+    <image src="/images/boy.jpg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex ==1 }}"/>
   </view>
-    <view style="font-size:24rpx;">
-      30分钟前从一个女生获得
+    <view style="font-size:24rpx;" wx:if="{{sex ==0}}">
+      从一个女生获得
+    </view>
+    <view style="font-size:24rpx;" wx:if="{{sex ==1}}">
+      从一个男生获得
     </view>
 
     <view style="font-size:36rpx;margin-top:100rpx;">
-      她/他是年级最特立独行的人
+      {{question}}
     </view>
 
     <view style="margin-top:100rpx;">回答:</view>

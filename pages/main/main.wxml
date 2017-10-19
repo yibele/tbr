@@ -1,19 +1,25 @@
-<view class="container">
+<view class="container" wx:if="{{ isLoading == false }}">
   <scroll-view scroll-y style="height: 1220rpx;">
-    <view class="message" bindtap="toMesDetail">
-      <image src="/images/mes.png" mode="widthFix" style="height:100rpx;width:100rpx;;border-radius:60rpx;"/>
+  <view  wx:for="{{answer}}">
+    <view class="message" bindtap="toMesDetail" data-ques = "{{item.question}}" data-sex="{{item.consex}}" data-id ="{{item.id}}">
+      <image wx:if="{{item.viewed == 0}}" src="/images/mes.png" mode="widthFix" style="height:100rpx;width:100rpx;;border-radius:60rpx;"/>
+      <image wx:if="{{ item.viewed ==1 }}" src="/images/mes1.png" mode="widthFix" style="height:100rpx;width:100rpx;"/>
       <view style="height:50rpx;right:20rpx;position:absolute;font-size:28rpx;top:40rpx;">29m</view>
     </view>
-
-    <view class="message">
-      <image src="/images/mes1.png" mode="widthFix" style="height:100rpx;width:100rpx;"/>
-      <view style="height:50rpx;right:20rpx;position:absolute;font-size:28rpx;top:40rpx">60m</view>
     </view>
+
+    
   </scroll-view> 
 </view>
 
-<view class="tabBar" style='font-weight:blod'>
+<view class="tabBar" style='font-weight:blod' wx:if="{{isLoading == false}}">
   <view class="menu">朋友</view>
-  <view class="menu" style='color:red'>主页</view>
+  <view class="menu" style='position:relative' style='color:red'>主页<view wx:if="{{viewed >0}}" style='position:absolute;top:20rpx;right:280rpx;height:40rpx;width:40rpx;background-color:red;color:#fff;border-radius:20rpx;'>{{viewed}}</view></view>
   <view class="menu" bindtap="toPlay" >去玩</view>
+</view>
+<view class="container" wx:if="{{isLoading==true}}" style='color:#d97ead'>
+
+  <image src="https://cdn.dribbble.com/users/253309/screenshots/2861661/loading__.gif" mode="widthFix" style="margin-top:200rpx;"></image>
+  Loading...
+
 </view>
