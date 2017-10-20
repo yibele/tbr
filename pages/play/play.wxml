@@ -8,11 +8,11 @@
 
 <view class="container" wx:if="{{isLoading == false && index <=12}}">
   <view style="margin-top : 20rpx;font-size:34rpx;margin-bottom:12rpx; display:flex;">
-   <view style="position:absolute;left : 30rpx;color:#edfdfd;font-size:32rpx" bindtap="toMain">主页</view>
+
    <view style="font-size:28rpx">{{index}}/12</view>
-    <view style="position:absolute;right:30rpx;color:#edfdfd;font-size:32rpx">200</view>
+    
   </view>
-   <view class="hr"></view>
+
    <view class="headTum">
    
     <image src="/images/boy.jpg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;"/>
@@ -27,8 +27,8 @@
         <button wx:for="{{contacts}}"  bindtap="selectContacts" data-uid="{{item.id}}" data-qid="{{ question.id }}" data-ques="{{ question.question }}">{{item.name}}</button>       
     </view>
   </view>
-  <view style="font-size:28rpx;position:absolute;bottom:40rpx;left:40rpx;display:flex;align-items:center"><view style="display:inline-block" bindtap="refreshContact"> 刷新选项</view></view>
-  <view style="font-size:28rpx;position:absolute;bottom:40rpx;right:40rpx" bindtap="eskipQuestion">跳过</view>
+  <view style="font-size:28rpx;position:absolute;bottom:80rpx;left:40rpx;display:flex;align-items:center"><view style="display:inline-block" bindtap="refreshContact"><text class="fa fa-random" aria-hidden="true"></text>刷新选项</view></view>
+  <view style="font-size:28rpx;position:absolute;bottom:80rpx;right:40rpx" bindtap="eskipQuestion"><text  class="fa fa-exchange" aria-hidden="true"></text>跳过</view>
 </view>
 
 <view class="container" wx:if="{{isLoading == false && index > 12}}">

@@ -1,8 +1,9 @@
 {
-  "pages":[
-      "pages/init/init",
-        "pages/play/play",
- 
+  "pages": [
+        "pages/init/init",
+        "pages/me/me",
+
+    "pages/play/play",
     "pages/index/index",
     "pages/main/main",
     "pages/logs/logs",
@@ -10,11 +11,10 @@
     "pages/question/question"
 
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "TBReal",
+    "navigationBarTextStyle": "black"
   }
-  
 }

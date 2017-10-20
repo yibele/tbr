@@ -1,23 +1,33 @@
 
-<view class="container">
+<view class="container" wx:if="{{isLoading == true}}">
+  <image src='http://psdwizard.com/wp-content/uploads/2016/07/octo-loader.gif' style="margin-top:200rpx;"></image>
+  Loading...
+</view>
+
+<view class="container" wx:if="{{isLoading == false}}">
   <view class="headTum">
-    <image src="/images/girl.jpeg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex == 0}}"/>
+    <image src="/images/girl.jpeg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex == 0}}" />
 
-    <image src="/images/boy.jpg" mode="widthFix" style="height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex ==1 }}"/>
+    <image src="/images/boy.jpg" mode="widthFix" style="box-shadow: 0 0 16rpx #000;height:200rpx;width:200rpx;border-radius:100rpx;" wx:if="{{sex ==1 }}" />
   </view>
-    <view style="font-size:24rpx;" wx:if="{{sex ==0}}">
-      从一个女生获得
-    </view>
-    <view style="font-size:24rpx;" wx:if="{{sex ==1}}">
-      从一个男生获得
-    </view>
+  <view style="font-size:24rpx;" wx:if="{{sex ==0}}">
+    从一个女生获得
+  </view>
+  <view style="font-size:24rpx;" wx:if="{{sex ==1}}">
+    从一个男生获得
+  </view>
 
-    <view style="font-size:36rpx;margin-top:100rpx;">
-      {{question}}
-    </view>
+  <view style="font-size:36rpx;margin-top:100rpx;">
+    {{question}}
+  </view>
 
-    <view style="margin-top:100rpx;">回答:</view>
-    <view style="margin-top:100rpx;">
-      伊布格勒
+
+  <view class="answer">
+    <view class="choseUser">
+      <button wx:for="{{contacts}}">
+      <view wx:if="{{item == name}}" style="color:red">{{item}}</view>
+      <view wx:else>{{item}}</view>
+      </button>
     </view>
+  </view>
 </view>

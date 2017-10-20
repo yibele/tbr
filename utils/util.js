@@ -14,7 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-const url ="http://192.168.223.36/";
+const url ="https://www.yibele.com/";
 
 module.exports = {
   formatTime: formatTime,

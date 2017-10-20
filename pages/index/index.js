@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+const util = require('../../utils/util.js');
 const ages = []
 for (let i = 0; i <= 109; i++) {
   ages.push(i);
@@ -11,6 +12,10 @@ Page({
     userInfo: {
 
     },
+    btnDis : true,
+    btnDis1 : true,
+    message : '',
+    showToast : false,
     step: 0,
 
     /** 用户信息 */
@@ -51,16 +56,27 @@ Page({
     })
   },
   getName : function(e) {
-    this.setData({
-      name : e.detail.value
-    })
+      this.setData({
+        name: e.detail.value
+      })
   },
   getZhuanye : function(e) {
+    if (this.data.zhuanye.length > 0 && this.data.grade.length > 0) {
+      this.setData({
+        btnDis : false
+      })
+    }
     this.setData({
       zhuanye : e.detail.value
     })
   },
   getGrade : function (e) {
+    if (this.data.zhuanye.length > 0 && this.data.grade.length > 0) {
+      this.setData({
+        btnDis: false
+      })
+    }
+
     this.setData({
       grade : e.detail.value
     })
@@ -94,8 +110,14 @@ Page({
   },
   getName_pinyin : function(e) {
     this.setData({
-      name_pinyin : e.detail.value,
+      name_pinyin: e.detail.value,
     })
+    if (e.detail.value.length > 0) {
+      this.setData({
+        btnDis1: false
+      })
+    }
+
   },
   toMain : function(e) {
     console.log(wx.getStorageSync('openid'));
@@ -106,20 +128,30 @@ Page({
       sex : this.data.sex,
       zhuanye : this.data.zhuanye,
       name_pinyin : this.data.name_pinyin,
-      openid : wx.getStorageSync('openidf'),
+      openid : wx.getStorageSync('openid'),
       age : this.data.age,
     }
     console.log(data);
     wx.request({
-      url : 'http://192.168.223.36/addUser',
+      url : util.url+'addUser',
       data : data,
       method : 'GET',
       success : res=>{
-        if(res.code == 40001) {
-          console.log(res);
-          wx.navigateTo({
-            url : '/pages/main/main'
+        if(res.data.code == 40001) {
+          wx.setStorage({
+            key: 'openid',
+            data: res.data.openid,
+            success : function () {
+              wx.setStorageSync('uid', res.data.uid);
+              wx.setStorageSync('grade', res.data.grade);
+              wx.setStorageSync('sex', res.data.sex);
+              wx.setStorageSync('name', res.data.name);
+              wx.redirectTo({
+                url: '/pages/main/main'
+              })
+            }
           })
+         
         }
       },
     })

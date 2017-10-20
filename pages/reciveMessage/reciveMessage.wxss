@@ -5,3 +5,27 @@ Page {
 .headTum {
   margin-top : 100rpx;
 }
+.answer{
+  text-align:center;
+  margin-top:100rpx;
+}
+
+.choseUser button {
+  font-size:34rpx;
+
+  width:260rpx;
+  height : 100rpx;
+  background-color : #fff;
+  color :  rgb(70,179,245);
+  box-shadow: 0 0 10rpx #ccc;
+}
+.choseUser button.active {
+  background-color:#fff;
+}
+
+.choseUser {
+  display: flex;
+  flex-wrap: wrap;
+  width:600rpx;
+  height : 300rpx;
+}

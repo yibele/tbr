@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="header">
+    <image src="{{userInfo.avatarUrl}}" mode="widthFix" style="width:150rpx;border-radius:100rpx;box-shadow: 0 0 10rpx #ccc;"></image>
+    <view class="userName">{{name}}</view>
+
+  </view>
+
+  <view class="main">
+    <view style='position:relative;font-size:34rpx;font-weight : 900;margin-top : 20rpx;height : 80rpx;width:97%;background-color : #fff;line-height:80rpx;padding-left:20rpx;color:#9f9f9f;box-shadow: 0 0 10rpx #ccc;'>Top Gems
+      <view style="display:inline-block;position:absolute;top:5rpx;right:40rpx;">{{ answerNum }}
+        <image src="/images/gems.png" style="width:40rpx;" mode="widthFix"></image>
+      </view>
+    </view>
+    <view>
+      <view style="background-color:#fff;">
+
+        <view style="font-size:34rpx;padding-top:20rpx;padding-left:20rpx;" wx:for="{{rateMe}}">
+          <view style='display:inline-block;position:relative'>
+            <view style="height:40rpx;width:40rpx;background-color:#12af93;color:#fff;border-radius:20rpx;text-align:center;position:absolute;top:-10rpx;;left:-10rpx;">{{index}}</view>
+            <text class="fa fa-flag fa-2x" aria-hidden="true"></text>
+          </view>
+
+          <view style='display:inline-block;margin-left:40rpx;font-size:30rpx;'>{{item[0].question}}</view>
+           <view class="hr"></view>
+        </view>
+
+        <view style="width:100%;text-align:center;font-size:34rpx;color:#9f9f9f;padding-top:10rpx;padding-bottom:20rpx;"> See all
+          <text class="fa fa-lock" aria-hidden="true"></text>
+        </view>
+      </view>
+
+      <view class="firends" style='position:relative;font-size:34rpx;font-weight : 900;margin-top : 20rpx;height : 80rpx;width:98%;background-color : #fff;line-height:80rpx;padding-left:20rpx;color:#9f9f9f;box-shadow: 0 0 10rpx #ccc;'>排行榜</view>
+    </view>
+  </view>
+  <view class="tabBar" style='font-weight:blod'>
+    <view class="menu" bindtap="toMe" style='color:red'>我的</view>
+    <view class="menu" style='position:relative' bindtap="toMain">主页
+    </view>
+    <view class="menu" bindtap="toPlay">去玩</view>
+  </view>
+
+</view>

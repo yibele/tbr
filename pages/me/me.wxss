@@ -1,0 +1,83 @@
+/* pages/me/me.wxss */
+Page {}
+.container1 {
+   height: 100%;
+   width : 100%;
+}
+.userHead {
+  vertical-align:middle;
+}
+.userName {
+  width : 200rpx;
+  text-align: center;
+  font-size : 28rpx;
+  font-weight: 900;
+}
+.header {
+  margin-top : 40rpx;
+  text-align: center;
+  margin-bottom : 20rpx;
+}
+.main {
+  width : 100%;
+  background-color :#f7f5f5;
+  box-shadow: 0 0 10rpx #ccc;
+}
+.hr {
+  background-color:#ccc;
+  margin-bottom:0;
+  margin-top : 10rpx;
+}
+.tabBar { 
+  padding-left : 10rpx;
+  padding-top : 10rpx;
+  padding-bottom:10rpx;
+  padding-right : 10rpx;
+  background-color : #ffffff;
+  margin-bottom : 10rpx;
+  border-radius: 6rpx;
+  position : absolute;
+  bottom : 0;
+  left:20rpx;
+  height:80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  box-shadow: 0 0 10rpx #ccc;
+}
+
+.tabBar .menu {
+  flex-grow: 1;
+  color : #4d4b4b;
+  font-size : 30rpx;
+  text-align: center
+}
+.tabBar { 
+  padding-left : 10rpx;
+  padding-top : 10rpx;
+  padding-bottom:10rpx;
+  padding-right : 10rpx;
+  background-color : #ffffff;
+  margin-bottom : 10rpx;
+  border-radius: 6rpx;
+  position : absolute;
+  bottom : 0;
+  width : 94%;
+  height:80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  display: -webkit-flex;
+}
+
+.tabBar .menu {
+  flex-grow: 1;
+  color : #4d4b4b;
+  font-size : 30rpx;
+  text-align: center
+}

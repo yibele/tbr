@@ -1,8 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    console.log('onLaunch')
-
     // 登录
    
     // 获取用户信息
@@ -28,7 +26,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    uid : ''
+
   },
   
 })

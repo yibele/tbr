@@ -1,4 +1,5 @@
 // pages/init/init.js
+const util = require('../../utils/util.js');
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
         console.log('正在获取用户信息')
         if (res.code) {
           wx.request({
-            url: 'http://192.168.223.36/onLogin',
+            url: util.url+'onLogin',
             data: {
               code: res.code
             },
@@ -49,7 +50,7 @@ Page({
   getUserState: function (openid) {
     var that = this
     wx.request({
-      url: 'http://192.168.223.36/getUserState',
+      url: util.url+'getUserState',
       data : {
         'openid' : openid
       },
@@ -60,6 +61,8 @@ Page({
           })
           console.log(res.data)
           wx.setStorageSync('sex', res.data.sex)
+          wx.setStorageSync('grade', res.data.grade)
+          wx.setStorageSync('name',res.data.name);
           wx.setStorage({
             key: 'uid',
             data: res.data.uid,
